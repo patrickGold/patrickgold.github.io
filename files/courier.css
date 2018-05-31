@@ -1,0 +1,117 @@
+/*!courier.css
+ * Stylesheet for patrickgold main sites (e.g. index.html)
+ *
+ * (c) 2018 Patrick Goldinger. All rights reserved.
+ */
+
+html,body{height:100%;}
+
+body {
+    background-color: #222;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+
+.courier {
+    box-sizing: border-box;
+    color: #fff;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 720px;
+}
+.courier a {
+    color: #0f3;
+}
+.courier > .top-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 100%;
+}
+.courier > .top-header > h1 {
+    font-size: 28pt;
+    margin: 0;
+}
+.courier > .intro-text {
+    border-bottom: 1px solid #555;
+    margin: 0;
+    padding: 5px 0;
+}
+.courier > .project-container {
+    padding: 20px 0;
+    width: 100%;
+}
+.courier > .project-container > h2 {
+    margin: 0;
+}
+.courier > .project-container > .project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+.courier > .project-container > .project-list > .project-card {
+    display: flex;
+    flex: 0 0 auto;
+    height: 220px;
+    margin: 10px 3.18px 0 3.18px;
+    position: relative;
+    width: 220px;
+}
+.courier > .project-container > .project-list > .project-card > img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.courier > .project-container > .project-list > .project-card > .specs {
+    background-color: rgba(0,0,0,0.5);
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    transition: .4s ease;
+    width: 100%;
+}
+.courier > .project-container > .project-list > .project-card > .specs > h3 {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+.courier > .project-container > .project-list > .project-card > .specs > *:not(h3) {
+    display: none;
+}
+.courier > .project-container > .project-list > .project-card:hover > .specs {
+    background-color: rgba(0,0,0,0.85);
+    height: 100%;
+}
+.courier > .project-container > .project-list > .project-card:hover > .specs > *:not(h3) {
+    display: block;
+}
+.courier > .site-footer {
+    border-top: 1px solid #555;
+    padding: 5px 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+    .courier > .top-header {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .courier > .project-container > .project-list > .project-card {
+        height: 350px;
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
