@@ -4,28 +4,42 @@
  * (c) 2019 Patrick Goldinger. All rights reserved.
  */
 
+:root {
+    --page-bg-color: #222;
+    --page-green-color: #0f3;
+    --page-text-color: #fff;
+
+    --divider-border-color: #555;
+
+    --project-card-bg-color: rgba(0,0,0,0.5);
+    --project-card-bg-color-hover: rgba(0,0,0,0.85);
+
+    --scrollbar-thumb-color: #444;
+    --scrollbar-track-color: var(--page-bg-color);
+}
+
 html,body{height:100%;}
 
 body {
-    background-color: #222;
+    background-color: var(--page-bg-color);
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
 }
 
 
-.courier {
+#body {
     box-sizing: border-box;
-    color: #fff;
+    color: var(--page-text-color);
     margin: 0 auto;
     padding: 10px 20px;
     width: 100%;
     max-width: 720px;
 }
-.courier a {
-    color: #0f3;
+#body a {
+    color: var(--page-green-color);
 }
 
-.courier > .top-header {
+#body > .top-header {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -34,25 +48,25 @@ body {
     padding: 20px 0;
     width: 100%;
 }
-.courier > .top-header > h1 {
+#body > .top-header > h1 {
     font-size: 28pt;
     margin: 0;
 }
 
-.courier > .intro-text {
-    border-bottom: 1px solid #555;
+#body > .intro-text {
+    border-bottom: 1px solid var(--divider-border-color);
     margin: 0;
     padding: 5px 0;
 }
 
-.courier > .project-container {
+#body > .project-container {
     padding: 20px 0;
     width: 100%;
 }
-.courier > .project-container > h2 {
+#body > .project-container > h2 {
     margin: 0;
 }
-.courier > .project-container > .project-list {
+#body > .project-container > .project-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -61,7 +75,7 @@ body {
     margin: 0;
     padding: 10px 0 0 0;
 }
-.courier > .project-container > .project-list > .project-card {
+#body > .project-container > .project-list > .project-card {
     background-color: #121212;
     cursor: default;
     display: flex;
@@ -71,16 +85,16 @@ body {
     position: relative;
     width: 220px;
 }
-.courier > .project-container > .project-list > .project-card:not(:nth-child(3n + 1)) {
+#body > .project-container > .project-list > .project-card:not(:nth-child(3n + 1)) {
     margin-left: 10px;
 }
-.courier > .project-container > .project-list > .project-card > img {
+#body > .project-container > .project-list > .project-card > img {
     height: 100%;
     object-fit: cover;
     width: 100%;
 }
-.courier > .project-container > .project-list > .project-card > .specs {
-    background-color: rgba(0,0,0,0.5);
+#body > .project-container > .project-list > .project-card > .specs {
+    background-color: var(--project-card-bg-color);
     bottom: 0;
     box-sizing: border-box;
     display: block;
@@ -95,7 +109,7 @@ body {
     transition: .4s ease;
     width: 100%;
 }
-.courier > .project-container > .project-list > .project-card > .specs > h3 {
+#body > .project-container > .project-list > .project-card > .specs > h3 {
     display: block;
     height: 24px;
     line-height: 24px;
@@ -105,48 +119,51 @@ body {
     white-space: nowrap;
     width: 100%;
 }
-.courier > .project-container > .project-list > .project-card:hover > .specs > h3 {
+#body > .project-container > .project-list > .project-card:hover > .specs > h3 {
     height: auto;
     line-height: initial;
     text-overflow: initial;
     white-space: normal;
 }
-.courier > .project-container > .project-list > .project-card:hover > .specs {
-    background-color: rgba(0,0,0,0.85);
+#body > .project-container > .project-list > .project-card:hover > .specs {
+    background-color: var(--project-card-bg-color-hover);
     min-height: 100%;
     max-height: 100%;
 }
 
-.courier > .site-footer {
-    border-top: 1px solid #555;
+#body > .site-footer {
+    border-top: 1px solid var(--divider-border-color);
     padding: 5px 0;
     width: 100%;
 }
 
 
 @media screen and (max-width: 720px) {
-    .courier > .top-header {
+    #body > .top-header {
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
     }
-    .courier > .project-container > .project-list > .project-card {
+    #body > .project-container > .project-list > .project-card {
         height: 300px;
         margin: 10px 0 0 0;
         width: 100%;
     }
-    .courier > .project-container > .project-list > .project-card:not(:nth-child(3n + 1)) {
+    #body > .project-container > .project-list > .project-card:not(:nth-child(3n + 1)) {
         margin-left: 0;
     }
 }
 
 
+:root {
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
 ::-webkit-scrollbar {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--scrollbar-track-color);
 }
 ::-webkit-scrollbar-thumb {
-    background: #0f3;
+    background: var(--scrollbar-thumb-color);
 }
