@@ -1,0 +1,152 @@
+/*!patrickgold.css
+ * Stylesheet for patrickgold main sites (e.g. index.html)
+ *
+ * (c) 2019 Patrick Goldinger. All rights reserved.
+ */
+
+html,body{height:100%;}
+
+body {
+    background-color: #222;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+
+.courier {
+    box-sizing: border-box;
+    color: #fff;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 720px;
+}
+.courier a {
+    color: #0f3;
+}
+
+.courier > .top-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 100%;
+}
+.courier > .top-header > h1 {
+    font-size: 28pt;
+    margin: 0;
+}
+
+.courier > .intro-text {
+    border-bottom: 1px solid #555;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.courier > .project-container {
+    padding: 20px 0;
+    width: 100%;
+}
+.courier > .project-container > h2 {
+    margin: 0;
+}
+.courier > .project-container > .project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+.courier > .project-container > .project-list > .project-card {
+    background-color: #121212;
+    cursor: default;
+    display: flex;
+    flex: 0 0 auto;
+    height: 220px;
+    margin: 10px 0 0 0;
+    position: relative;
+    width: 220px;
+}
+.courier > .project-container > .project-list > .project-card:not(:nth-child(3n + 1)) {
+    margin-left: 10px;
+}
+.courier > .project-container > .project-list > .project-card > img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.courier > .project-container > .project-list > .project-card > .specs {
+    background-color: rgba(0,0,0,0.5);
+    bottom: 0;
+    box-sizing: border-box;
+    display: block;
+    min-height: 34px; /* both min- and max-height needed for CSS transition! */
+    max-height: 34px;
+    min-height: 0;
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 5px 10px;
+    position: absolute;
+    transition: .4s ease;
+    width: 100%;
+}
+.courier > .project-container > .project-list > .project-card > .specs > h3 {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.courier > .project-container > .project-list > .project-card:hover > .specs > h3 {
+    height: auto;
+    line-height: initial;
+    text-overflow: initial;
+    white-space: normal;
+}
+.courier > .project-container > .project-list > .project-card:hover > .specs {
+    background-color: rgba(0,0,0,0.85);
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.courier > .site-footer {
+    border-top: 1px solid #555;
+    padding: 5px 0;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 720px) {
+    .courier > .top-header {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .courier > .project-container > .project-list > .project-card {
+        height: 300px;
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+    .courier > .project-container > .project-list > .project-card:not(:nth-child(3n + 1)) {
+        margin-left: 0;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #0f3;
+}
