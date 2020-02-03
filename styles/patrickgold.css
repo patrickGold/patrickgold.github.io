@@ -70,13 +70,13 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    list-style: none;
     justify-content: flex-start;
     margin: 0;
     padding: 10px 0 0 0;
 }
 #body > .project-container > .project-list > .project-card {
     background-color: #121212;
+    border-radius: 8px;
     cursor: default;
     display: flex;
     flex: 0 0 auto;
@@ -85,16 +85,26 @@ body {
     position: relative;
     width: 220px;
 }
-#body > .project-container > .project-list > .project-card:not(:nth-child(3n + 1)) {
+#body > .project-container > .project-list > .project-card.multi {
+    height: auto;
+    min-height: 220px;
+    width: 680px;
+}
+#body > .project-container > .project-list > .project-card:not(.multi):not(:nth-child(3n + 1)) {
     margin-left: 10px;
 }
 #body > .project-container > .project-list > .project-card > img {
+    border-radius: inherit;
     height: 100%;
     object-fit: cover;
     width: 100%;
 }
 #body > .project-container > .project-list > .project-card > .specs {
     background-color: var(--project-card-bg-color);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
     bottom: 0;
     box-sizing: border-box;
     display: block;
@@ -119,6 +129,21 @@ body {
     white-space: nowrap;
     width: 100%;
 }
+#body > .project-container > .project-list > .project-card > .specs a + a::before{
+    background-color: var(--page-text-color);
+    border-radius: 100%;
+    content: "";
+    display: inline-block;
+    height: 6px;
+    margin: 0 8px;
+    width: 6px;
+}
+#body > .project-container > .project-list > .project-card > .specs div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
 #body > .project-container > .project-list > .project-card:hover > .specs > h3 {
     height: auto;
     line-height: initial;
@@ -127,6 +152,7 @@ body {
 }
 #body > .project-container > .project-list > .project-card:hover > .specs {
     background-color: var(--project-card-bg-color-hover);
+    border-radius: inherit;
     min-height: 100%;
     max-height: 100%;
 }
@@ -144,7 +170,8 @@ body {
         flex-wrap: nowrap;
         justify-content: center;
     }
-    #body > .project-container > .project-list > .project-card {
+    #body > .project-container > .project-list > .project-card,
+    #body > .project-container > .project-list > .project-card.multi {
         height: 300px;
         margin: 10px 0 0 0;
         width: 100%;
