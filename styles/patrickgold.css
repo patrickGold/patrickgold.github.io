@@ -5,17 +5,34 @@
  */
 
 :root {
-    --page-bg-color: #222;
+    --page-bg-color: #333;
     --page-green-color: #0f3;
     --page-text-color: #fff;
 
     --divider-border-color: #555;
 
-    --card-bg-color: rgba(0,0,0,0.5);
-    --card-bg-color-hover: rgba(0,0,0,0.85);
+    --card-bg-color: #121212;
+    --card-info-bg-color: rgba(0,0,0,0.5);
+    --card-info-bg-color-hover: rgba(0,0,0,0.85);
 
     --scrollbar-thumb-color: #444;
     --scrollbar-track-color: var(--page-bg-color);
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --page-bg-color: #ddd;
+        --page-green-color: #0a0;
+        --page-text-color: #000;
+
+        --divider-border-color: #aaa;
+
+        --card-bg-color: #ededed;
+        --card-info-bg-color: rgba(255,255,255,0.5);
+        --card-info-bg-color-hover: rgba(255,255,255,0.85);
+
+        --scrollbar-thumb-color: #bbb;
+        --scrollbar-track-color: var(--page-bg-color);
+    }
 }
 
 html, body { height: 100%; }
@@ -25,7 +42,6 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
 }
-
 
 #body {
     box-sizing: border-box;
@@ -76,7 +92,7 @@ a {
 }
 
 .card {
-    background-color: #121212;
+    background-color: var(--card-bg-color);
     border-radius: 8px;
     cursor: default;
     display: flex;
@@ -98,7 +114,7 @@ a {
     width: 100%;
 }
 .card > .info {
-    background-color: var(--card-bg-color);
+    background-color: var(--card-info-bg-color);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: inherit;
@@ -115,6 +131,9 @@ a {
     position: absolute;
     transition: all .4s ease 0s;
     width: 100%;
+}
+.card > .info > .description {
+    margin: 16px 0;
 }
 .card > .info > h3 {
     display: block;
@@ -136,7 +155,7 @@ a {
     width: 6px;
 }
 .card:hover > .info {
-    background-color: var(--card-bg-color-hover);
+    background-color: var(--card-info-bg-color-hover);
     border-radius: inherit;
     min-height: 100%;
     max-height: 100%;
