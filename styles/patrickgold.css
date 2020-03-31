@@ -110,7 +110,7 @@ a {
 .card > img {
     border-radius: inherit;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
 }
 .card > .info {
@@ -187,6 +187,9 @@ a {
         height: 300px;
         margin: 10px 0 0 0;
         width: 100%;
+    }
+    .card:hover .info {
+        overflow-y: scroll;
     }
 }
 
